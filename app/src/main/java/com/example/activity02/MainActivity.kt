@@ -16,54 +16,57 @@ import androidx.compose.foundation.border
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material3.Icon
+import androidx.compose.ui.Alignment
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            Activity02Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+            ProfileScreen()
             }
         }
     }
+
+@Composable
+fun ProfileScreen(){
+  Column(modifier = Modifier.fillMaxSize(),
+      horizontalAlignment = Alignment.CenterHorizontally
+  )
+  {
+      ProfileTitle()
+      ProfileImage()
+      ProfileDescription()
+  }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun ProfileTitle(){
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = "John Doe",
+        modifier = Modifier.padding(16.dp)
     )
 }
 
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    Activity02Theme {
-        Greeting("Android")
-    }
+fun ProfileImage(){
+   Icon(
+       imageVector = Icons.Default.AccountCircle,
+       contentDescription = "Profile Image",
+       modifier = Modifier
+           .padding(16.dp)
+           .size(120.dp)
+   )
 }
 
 @Composable
-fun Hello() {
+fun ProfileDescription(){
     Text(
-        text = "Hello Students",
-        fontSize = 32.sp,
-        modifier = Modifier
-            .background(androidx.compose.ui.graphics.Color.Blue)
-            .border(2.dp, androidx.compose.ui.graphics.Color.Magenta)
-            .padding(10.dp)
+        text = "John doe is a professional mobile app developer with over 20 years of experience",
+        modifier = Modifier.padding(16.dp)
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun HelloPreview() {
-    Hello()
 }
