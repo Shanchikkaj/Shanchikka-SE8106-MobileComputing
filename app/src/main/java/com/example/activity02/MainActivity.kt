@@ -47,7 +47,7 @@ fun ProfileScreen(){
 @Composable
 fun ProfileTitle(){
     Text(
-        text = "John Doe",
+        text = "Shanchikka",
         modifier = Modifier.padding(16.dp)
     )
 }
@@ -66,7 +66,7 @@ fun ProfileImage(){
 @Composable
 fun ProfileDescription(){
     Text(
-        text = "John doe is a professional mobile app developer with over 20 years of experience",
+        text = "Shanchika is a professional mobile app developer with over 2 years of experience",
         modifier = Modifier.padding(16.dp)
     )
 }
