@@ -61,7 +61,14 @@ fun LoginScreen(
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    Column()
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(20.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    )
     {
         Text(text = "Login")
 
@@ -132,9 +139,17 @@ fun RegisterScreen(onDone: () -> Unit) {
 
 @Composable
 fun HomeScreen(){
-    Box (){
-        Text("Logged In")
+    Column(  modifier = Modifier
+        .fillMaxSize()
+        .padding(20.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally) {
+
+        Box (){
+            Text("Logged In")
+        }
     }
+
 }
 
 
